@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/obj/Debug/net8.0/scopedcss/projectbundle/P2WebMVC.bundle.scp.css",
+      "PackagePath": "staticwebassets/P2WebMVC.bundle.scp.css"
+    },
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/wwwroot/css/input.css",
+      "PackagePath": "staticwebassets/css/input.css"
+    },
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/wwwroot/css/output.css",
+      "PackagePath": "staticwebassets/css/output.css"
+    },
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/home/irfan_usuf/Coding/GIT007/P2WebMVC/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.P2WebMVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.P2WebMVC.props",
+      "PackagePath": "build\\P2WebMVC.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.P2WebMVC.props",
+      "PackagePath": "buildMultiTargeting\\P2WebMVC.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.P2WebMVC.props",
+      "PackagePath": "buildTransitive\\P2WebMVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

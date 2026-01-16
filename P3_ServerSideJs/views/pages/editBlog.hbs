@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="/css/blogs.css">
+
+
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+
+<div class="blog-container">
+
+
+  <form class="form">
+
+    <h1> Edit  Your Blog </h1>
+
+    <div class="form-input">
+      <label> Title :</label>
+      <input placeholder="Blog title goes here" id="blogTitle" value="{{blogTitle}}">
+    </div>
+
+    <div class="form-group">
+
+      <div class="form-input">
+        <label> Upload Picture :</label>
+        <input placeholder="Paste your Blog Picture Url here" id="blogPicture" value="{{blogPicture}}">
+      </div>
+  
+      <div class="form-input">
+
+        <label> Short Desc. :</label>
+        <input placeholder="Write Small Description of your blog" id="shortDesc" value="{{shortDesc}}">
+      </div>
+
+       <div class="form-input">
+        <label> Category:</label>
+        <input placeholder="Category goes here e.g #blog #travel" id="category" value="{{category}}">
+      </div>
+    </div>
+
+
+
+    <textarea id="froala-editor" placeholder="Blog description goes here" >{{blogDescription}}</textarea>
+
+
+    <div class="button">
+      <button id="update"> Update </button>
+    </div>
+
+
+  </form>
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+  const editor = new FroalaEditor('#froala-editor' ,{
+    height : 500
+  }) 
+
+
+
+
+  document.getElementById("update").addEventListener("click", async (event) => {
+
+    event.preventDefault()
+    
+    const currentUrl = window.location.href;
+    const blogId = currentUrl.split('/').pop();
+
+    const blogTitle = document.getElementById("blogTitle").value
+    const blogDescription = editor.html.get();
+    const category = document.getElementById("category").value
+    const shortDesc = document.getElementById("shortDesc").value
+    const blogPicture = document.getElementById("blogPicture").value
+
+    try {
+      const response = await fetch(`/blog/edit/${blogId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ blogTitle, blogDescription, category , shortDesc , blogPicture }),
+      });
+
+      const data = await response.json()
+
+      if (data.success) {
+        alert(data.message);
+        window.location.href = "/blogs"
+      } else {
+        alert(data.message);  
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while saving content.');
+    }
+  })
+
+
+
+
+</script>

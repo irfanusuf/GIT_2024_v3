@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = P1WebMVC
+build_property.RootNamespace = P1WebMVC
+build_property.ProjectDir = /home/irfanyousuf/coding/GIT_006/P1WebMVC/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/irfanyousuf/coding/GIT_006/P1WebMVC
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Explore/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXhwbG9yZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Explore/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXhwbG9yZS9Qcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Explore/Reels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXhwbG9yZS9SZWVscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Explore/test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXhwbG9yZS90ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/RightSideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1JpZ2h0U2lkZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/SideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1NpZGVOYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/Stories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1N0b3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/SuggestionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1N1Z2dlc3Rpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/User/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/User/UpdatePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9VcGRhdGVQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/GIT_006/P1WebMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1nigmbqnkf

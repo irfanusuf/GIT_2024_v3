@@ -1,0 +1,111 @@
+﻿@model P2WebMVC.Models.ViewModels.CartView
+
+@{
+    ViewData["title"] = "Cart";
+}
+
+
+
+
+
+
+
+
+
+<h2 class="text-center"> Cart</h2>
+
+
+
+
+@if (Model != null)
+{
+
+
+    <p class="text-muted pb-3">You have @Model?.Cart?.CartProducts?.Count() products in your cart</p>
+
+    <div class="row pb-5 " style="justify-content: space-between;">
+
+        <b class="col-3"> Product Name</b>
+
+        <b class="col-3"> Picture</b>
+
+        <b class="col-2"> Qty x Price</b>
+
+        <b class="col-2"> Product total</b>
+
+        <b class="col-2 d-flex justify-content-end"> Remove</b>
+    </div>
+
+
+
+
+    @foreach (var cartProduct in Model.CartProducts)
+    {
+
+        <div class="row " style="display: flex; align-items : center">
+
+
+            <p class="text-muted col-3"> @cartProduct?.Product?.ProductName</p>
+
+            <p class="text-muted col-3"> <img class="" src="@cartProduct?.Product?.ProductImage" alt="" width="100"> </p>
+
+            <p class="text-muted col-2"> @cartProduct?.Quantity x @cartProduct?.Product?.ProductPrice </p>
+
+            <p class="text-muted col-2"> Rs. @(cartProduct?.Quantity * cartProduct?.Product?.ProductPrice) </p>
+
+            <p class="text-muted col-2 d-flex justify-content-end"> <a asp-controller="Product" asp-action="removeFromCart"
+                    asp-route-ProductId="@cartProduct?.ProductId" class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i>
+                </a> </p>
+
+
+        </div>
+
+    }
+
+
+    <div class="row " style="justify-content: space-between; align-items: center;">
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <b class="col-2 text-muted">Total</b>
+        <p class="col-4">Rs. @Model?.Cart?.CartTotal</p>
+
+    </div>
+
+    <div class="row " style="justify-content: space-between; align-items: center;">
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <b class="col-2 text-muted">Discount</b>
+        <p class="col-4">Rs. 00.00</p>
+
+    </div>
+
+    <div class="row " style="justify-content: space-between; align-items: center;">
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <b class="col-2 text-muted">Amount Payable</b>
+        <b class="col-4 ">Rs. @Model?.Cart?.CartTotal</b>
+
+    </div>
+
+
+
+    <div class="d-flex justify-content-end mt-3 ">
+        <a class="btn btn-outline-success" asp-controller="Order" asp-action="Checkout"
+            asp-route-CartId="@Model?.Cart?.CartId"> Procced To CheckOut</a>
+    </div>
+
+}
+else
+{
+
+
+
+    <div style="display: flex; justify-content: center; align-items: center; min-height : 70vh">
+
+
+
+        <p class="text-muted"> Note: Write something to show the user when there is some errors in the code </p>
+
+
+    </div>
+}

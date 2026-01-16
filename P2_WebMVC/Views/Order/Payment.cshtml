@@ -1,0 +1,110 @@
+﻿@model P2WebMVC.Models.ViewModels.OrderView
+
+
+@{
+    ViewData["Title"] = "Payment" ;
+}
+
+
+
+
+@if(Model.Order != null){
+    <div>
+        
+         <p id="orderId">@Model.Order.OrderId</p> 
+         <p> Order total :  <span id="amount">@Model.Order.TotalPrice</span>      <span>INR</span>   </p> 
+       
+     </div>
+
+}
+
+
+ <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+
+<script>
+
+    
+async function payNow() {
+    console.log("payment intializing.......");
+    const OrderId = document.getElementById("orderId").innerText.trim(); // guid hard code value for testing    // we need dynamic order Id 
+    const Amount = parseInt(document.getElementById("amount").innerText.trim(), 10);
+    const Currency = "INR";
+
+  
+    const formBody = { Amount, Currency, OrderId };
+
+    console.log(formBody)
+
+    try {
+      const res = await fetch("/PaymentApi/CreatePaymentIntent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formBody),
+      });
+  
+      if (res.ok) {
+  
+        const data = await res.json();
+        
+           const options = {
+                  key: 'rzp_test_RgG9AwfnysizZu',
+                  amount: data.amount,
+                  currency: data.currency,
+                  name: 'Irfan',
+                  description: 'Payment Transaction',
+                  order_id: data.OrderId,
+                  prefill: {
+                      name: "irfan",
+                      email: "irfanusuf33@gmail.com",
+                      contact:  "9906520959"
+                  },
+
+                  handler: function (response) {
+                    console.log("Payment Success:", response);
+                    const redirectOrderId = document.getElementById('orderId').innerText.trim();
+                    const redirectUrl = `http://localhost:5153/Order/PaymentSuccess?OrderId=${redirectOrderId}`;
+                    window.location.href = redirectUrl;
+                },
+
+                
+             
+                  theme: {
+                      color: '#F37254'
+                  }
+              };
+  
+        const razorPayApp = new Razorpay(options)
+  
+        razorPayApp.open()
+  
+      } else {
+        window.alert("something went Wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }  
+  }
+
+
+
+
+payNow()  
+ 
+
+ 
+
+</script>
+
+
+
+
+
+
+
+
+
+

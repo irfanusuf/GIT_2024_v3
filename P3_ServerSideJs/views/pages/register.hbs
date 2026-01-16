@@ -1,0 +1,37 @@
+
+
+<link rel="stylesheet" href="/css/form.css">
+
+
+<div class="form-container">
+  <h1>Sign Up</h1>
+
+
+  <form method="post" action="/register">
+    <input placeholder="Enter your Username" type="text" name="username" />
+    <input placeholder="Enter your Email" type="email" name="email" />
+    <input placeholder="Enter your Password" type="password" name="password" />
+    
+    <p> If u already have an account kindly <a href="/login"> login </a> here </p>
+    <div class="check-box">
+      <input type="checkbox" required>
+      <span> I Agree to accept <a href="#"> Terms & conditions </a> and <a href="#"> Privacy Policy</a></span>
+    </div>
+
+    <button type="submit">Register</button>
+
+  </form>
+
+
+    {{#if errorMessage}}
+    <p style="color: rgb(255, 94, 0);"> Warning :{{errorMessage}} </p>
+    {{/if}}
+
+
+
+    {{#if successMessage}}
+    <p style="color: rgb(14, 84, 4);"> {{successMessage}} </p>
+    {{/if}}
+
+
+</div>

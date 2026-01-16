@@ -1,0 +1,100 @@
+﻿
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+<style>
+
+.my_register_form{
+
+    @* border: 1px solid black; *@
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.144);
+}
+
+
+
+</style>
+
+
+<div class=" w-25 mt-5 mx-auto my_register_form h-50" >
+
+
+    <h2 class="text-center mb-5"> Register with Us</h2>
+
+
+
+<form method="post">
+
+    <div class="mb-3">
+        <label  class="form-label">Username</label>
+        <input type="text" class="form-control"  placeholder="john doe" name="Username">
+    </div>
+
+   
+ @* postArr = [username , email , password] *@
+
+    <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input type="email" class="form-control"  placeholder="name@example.com" name="Email">
+    </div>
+
+
+    <div class="mb-3">
+
+        <label class="form-label">Password</label>
+        <input type="password"  class="form-control" aria-describedby="passwordHelpBlock" placeholder="*********" name="Password">
+
+
+
+        <div id="passwordHelpBlock" class="form-text mt-3">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
+            special characters, or emoji.
+        </div>
+
+    </div>
+
+
+
+    <p> Already have an account  <a href="/user/login"> Login </a>     </p>
+
+    <button type="submit"  class="btn btn-secondary  mt-3 "> Create Account </button>
+
+
+
+
+
+        @* html rendering on condition  *@
+
+
+
+
+    @* @{
+        if( !string.IsNullOrEmpty(ViewBag.ErrorMessage ) ){
+         <p class="text-danger pt-3"> @ViewBag.ErrorMessage </p>
+        }
+
+
+        if(!string.IsNullOrEmpty(ViewBag.SuccessMessage)){
+            <p class="text-success pt-3"> @ViewBag.SuccessMessage </p>
+        }
+    } *@
+
+
+   
+
+
+</form>
+
+
+
+
+
+</div>
+
+
+

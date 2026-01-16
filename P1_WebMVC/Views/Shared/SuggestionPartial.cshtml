@@ -1,0 +1,189 @@
+﻿@model P1WebMVC.Models.ViewModels.ExploreViewModel
+
+
+<style>
+    .suggestions {
+        width: 20%;
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        right: 20px;
+        top: 10px;
+        box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.111);
+        border-radius: 8px;
+
+
+        .switch_user,
+        .suggested_user {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+
+            .profile_image {
+                flex: 1;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+
+            .profile_username {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+               
+                span{
+                    color: grey;
+                    font-size: 14px;
+                }
+
+                .username{
+                    color: black;
+                }
+
+                span:first-child {
+                    font-weight: 700;
+                    font-size: 16px;       
+                }
+            }
+
+            .cta {
+                flex: 1;
+                justify-content: right;
+                display: flex;
+
+                span {
+                    color: rgb(108, 36, 171);
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        .suggesting_heading,
+        .trending_heading {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+
+            span:first-child {
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            span:last-child {
+
+                color: grey;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+</style>
+
+
+
+
+<div class="suggestions">
+
+    <div class="switch_user">
+
+        <div class="profile_image">
+            <img src="@Model?.LoggedInUser?.ProfilePic" />
+        </div>
+
+        <div class="profile_username">
+            <span class="username"> @Model?.LoggedInUser?.Username </span>
+
+            <span> #irfan33</span>
+        </div>
+
+        <div class="cta">
+
+            <span> Switch </span>
+        </div>
+
+    </div>
+
+
+    <div class="suggesting_heading">
+
+        <span>Suggested For You</span>
+        <span> See All</span>
+
+    </div>
+
+    @foreach (var user in Model.SuggestedUsers)
+    {
+
+        <div class="suggested_user">
+
+            <div class="profile_image">
+                <img src="@user.ProfilePic" />
+            </div>
+
+
+
+            <div class="profile_username">
+                <span> @user.Username </span>
+
+                <span> #dummyId</span>
+            </div>
+
+
+            <div class="cta">
+
+                <span> Follow </span>
+            </div>
+
+
+
+        </div>
+
+    }
+
+    <div class="trending_heading">
+
+        <span>Trending Artists</span>
+        <span> See All</span>
+
+    </div>
+
+
+     @foreach (var user in Model.SuggestedUsers.Where(user => user.Posts.Count == 3))
+    {
+
+        <div class="suggested_user">
+
+            <div class="profile_image">
+                <img src="@user.ProfilePic" />
+            </div>
+
+
+
+            <div class="profile_username">
+                <span> @user.Username </span>
+
+                <span> #dummyId</span>
+            </div>
+
+
+            <div class="cta">
+
+                <span> Follow </span>
+            </div>
+
+
+
+        </div>
+
+    }
+
+
+
+</div>

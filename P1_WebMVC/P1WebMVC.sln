@@ -1,0 +1,30 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P1WebMVC", "P1WebMVC.csproj", "{60B30EC5-1B11-5288-769A-9F5CDAFF73D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2WebAPI", "P2WebAPI\P2WebAPI.csproj", "{B876EA87-251B-4994-BD1B-F4056A4457AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60B30EC5-1B11-5288-769A-9F5CDAFF73D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B30EC5-1B11-5288-769A-9F5CDAFF73D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B30EC5-1B11-5288-769A-9F5CDAFF73D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B30EC5-1B11-5288-769A-9F5CDAFF73D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B876EA87-251B-4994-BD1B-F4056A4457AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B876EA87-251B-4994-BD1B-F4056A4457AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B876EA87-251B-4994-BD1B-F4056A4457AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B876EA87-251B-4994-BD1B-F4056A4457AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC2310F3-76FE-4FF7-B487-E51B3225B3F1}
+	EndGlobalSection
+EndGlobal

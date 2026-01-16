@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+
+
+<style>
+
+.my_login_form{
+
+    @* border: 1px solid black; *@
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.144);
+}
+
+
+
+</style>
+
+
+
+<div class=" w-25 mt-5 mx-auto my_login_form h-50" >
+
+    <h2 class="text-center mb-5"> Login To your Account</h2>
+
+
+   
+  <form method="post">
+
+
+    <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input type="email" class="form-control"  placeholder="name@example.com" name="Email">
+    </div>
+
+
+    <div class="mb-3">
+
+        <label  class="form-label">Password</label>
+        <input type="password"  class="form-control" aria-describedby="passwordHelpBlock" placeholder="*********" name="Password">
+        <div  class="form-text mt-3">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
+            special characters, or emoji.
+        </div>
+
+    </div>
+
+      <p> Don't have an account <a href="/user/register"> register here  </a>     </p>
+
+    <p>  <a href="/user/forgotpassword"> Forgot password ? </a>     </p>
+    <button type="submit" class="btn btn-secondary  mt-3 ">  Login </button>
+
+
+
+        @* html rendering on condition  *@
+
+    @* @{
+        if( !string.IsNullOrEmpty(ViewBag.ErrorMessage ) ){
+         <p class="text-danger pt-3"> @ViewBag.ErrorMessage </p>
+        }
+
+
+        if(!string.IsNullOrEmpty(ViewBag.SuccessMessage)){
+            <p class="text-success pt-3"> @ViewBag.SuccessMessage </p>
+        }
+    } *@
+
+
+
+
+  </form>
+
+
+
+</div>

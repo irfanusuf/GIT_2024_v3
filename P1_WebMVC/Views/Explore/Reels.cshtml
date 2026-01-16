@@ -1,0 +1,162 @@
+﻿
+@{
+
+    ViewData["title"] = "Reels";
+}
+
+
+@model P1WebMVC.Models.ViewModels.ExploreViewModel
+
+
+
+
+<style>
+  .post_card {
+
+
+    >.post_image {
+      border-radius: 5px;
+      transition: all 0.7s ease-in;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+</style>
+
+  
+
+
+
+
+<div class="container mt-5">
+
+<h3>   Explore </h3>
+
+
+<div class="row mx-auto">
+@{
+
+   foreach(Post post in Model.Posts){
+
+
+    <div  class="col-lg-3 post_card " >   
+    
+ 
+      <video width="300">          
+        <source src="@post.PostVideoURL" type="video/mp4" />        
+      </video>
+    
+    <div class="d-flex gap-2">
+      
+      <div>
+
+        @if(Model.LoggedInUser != null){
+
+          @if(post.Likes.Contains(Model.LoggedInUser)){
+          <a href= "/post/Removelike?postId=@post.PostId">
+             <i class="bi bi-suit-heart-fill text-danger  " style="font-size: 22px; font-style : bold" ></i> 
+          </a> 
+          }else{
+
+            <a href= "/post/like?postId=@post.PostId"> 
+             <i class="bi bi-suit-heart text-danger  " style="font-size: 22px; font-style : bold" ></i> 
+            </a> 
+          }
+        }
+          <p class="mb-0 ms-1 " style="font-weight : 500"> @post.Likes.Count </p>
+      </div>
+
+
+      <div data-bs-toggle="modal" data-bs-target="#Modal-@post.PostId">
+          <i class="bi bi-chat-square-dots text-success  " style="font-size: 22px; font-style : bold" ></i>
+          <p class="mb-0 ms-1" style="font-weight : 500"> @post.Comments.Count </p>
+      </div>
+      
+    </div>
+
+    <p class="text-muted italic" > @post.PostCaption </p>
+
+
+    </div>
+            
+        
+<!-- Modal -->
+<div class="modal fade" id="Modal-@post.PostId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> @post.User?.Username</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <div class="modal-body">
+
+        
+    @if(post.PostpicURL != null)
+    {
+    <img src="@post.PostpicURL" width="460" height="400" />
+    }
+    else
+    {
+    <video width="460" controls  >          
+      <source src="@post.PostVideoURL" type="video/mp4" />    
+    </video>
+    }
+
+       <p class="w-100" > @post.PostCaption </p> 
+
+       
+        <div class="mt-3">
+
+            @if(post.Comments.Count > 0){
+
+            <p> Comments </p>
+
+       @foreach(Comment comment in post.Comments){
+
+          <div class="d-flex mb-2">
+            <div style="border : 1px solid grey ;border-radius : 100% ; width : 40px ; height :40px;"> 
+                <img  style="border-radius : 100% ; width : 40px ; height :40px;" src="@comment?.User?.ProfilePic"  />   
+             </div>
+
+             <div class="ms-3">
+                  <a asp-action="Profile" asp-controller="Explore" asp-route-userId ="@comment?.UserId" class="m-0 h-6" > @comment?.User?.Username </a>
+                  <p class=" text-muted m-0"> @comment?.CommentText </p>
+             </div>
+          
+          </div>
+        }
+        
+        }else{
+            <div class="d-flex justify-content-center">
+               <p class="text-muted" > No Comments yet  </p>   
+            </div>
+        }
+        </div>
+
+        <form method="post" asp-controller="Post" asp-action="AddComment" asp-route-postId ="@post.PostId">
+        
+            <input class="form-control" placeholder="Your thoughts" name="CommentText" />
+
+            <button type="submit" class="btn btn-sm btn-secondary mt-3"> Comment </button>
+        
+        </form>
+
+   
+      </div>
+
+    </div>
+  </div>
+</div>
+
+   }
+}
+                    
+</div>
+
+
+</div>
+

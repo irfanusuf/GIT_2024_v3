@@ -1,0 +1,88 @@
+.blog-container {
+  width: 90%;
+  margin: auto;
+  height: 90vh;
+}
+
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form {
+  padding-top: 10px;  
+  width: 100%;
+}
+
+
+.form-group{
+  display:  flex;
+  justify-content: space-between; 
+  align-items: center;  
+  gap: 20px;
+}
+
+
+.form-input {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  > label {
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-right: 2px;
+    color: rgb(54, 53, 53);
+  }
+  > input {
+    font-size: 18px;  
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 400px;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+
+  > button {
+    background-color: rgb(101, 101, 225);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    width: 200px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    margin-top: 20px;
+    &:hover {
+      background-color: rgb(77, 77, 223);
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width : 500px) {
+ 
+
+  .form-group{
+    flex-direction: column;
+  }
+  
+
+  .form-input{
+    flex-direction: column;
+    align-items: flex-start;
+    >label{
+      margin-bottom: 10px;
+    }
+  }
+
+
+
+}

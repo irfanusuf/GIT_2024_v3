@@ -1,0 +1,109 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = P2WebMVC
+build_property.RootNamespace = P2WebMVC
+build_property.ProjectDir = /home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Admin/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Admin/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Order/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXIvQ2hlY2tPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Order/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXIvUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Order/Recent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXIvUmVjZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/User/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9DYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/User/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9PcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/irfanyousuf/coding/shiny-GIT-007/P2WebMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-sr9bc0vv8n

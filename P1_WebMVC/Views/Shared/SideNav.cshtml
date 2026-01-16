@@ -1,0 +1,119 @@
+﻿@model P1WebMVC.Models.ViewModels.ExploreViewModel
+
+
+<style>
+    .side_nav {
+        width: 20%;
+        padding: 20px;
+        position: fixed;
+        left : 20px;
+        top : 10px;
+        box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.111);
+        border-radius: 8px;
+    
+        .brand_name {
+            display: flex;
+            margin-bottom: 30px;
+            h3 {
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(57, 52, 111);
+                font-weight: 700;
+            }
+        }
+
+        .search_bar {
+            border: 1px solid rgb(57, 52, 111);
+            border-radius: 15px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            i {
+                color: rgb(111, 107, 107);
+            }
+            input {
+                border: none;
+                font-size: 16px;
+                width: 80%;
+                margin-left: 10px;
+                outline: none;
+            }
+        }
+
+        .nav_links {
+            margin-top: 40px;
+            ul {
+                list-style-type: none;
+                padding: 0px;
+                li {
+                    margin: 20px 0px;
+                    i {
+                        font-size: 22px;
+                        padding-left: 15px;
+                        color: rgb(111, 107, 107);
+                    }
+                    a {
+                        font-size: 16px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: rgb(59, 59, 59);
+                        padding-left: 10px;
+                        font-weight: 600;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .notification_bar {
+            /* border: 1px solid black; */
+            padding: 10px;
+            min-height: 100px;
+            border-radius: 15px;
+            margin-top: 100px;
+            box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.102);
+        }
+
+        .logout_tab {
+            padding: 10px;
+            min-height: 60px;
+            border-radius: 15px;
+            margin-top: 50px;
+            box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.102);
+        }
+    }
+</style>
+
+
+<div class="side_nav">
+
+    <div class="brand_name">
+        <i class="bi bi-stars me-2"></i>    <h3> Trinkle Buddies</h3>
+    </div>
+
+    <div class="search_bar">
+
+        <i class="bi bi-search"></i>
+        <input placeholder="search" />
+    </div>
+
+
+    <div class="nav_links">
+        <ul>
+            <li> <i class="bi bi-house-door"></i> <a href="/explore/index"> Explore </a> </li>
+            <li> <i class="bi bi-list-task"></i> <a> Followers </a> </li>
+            <li> <i class="bi bi-people"></i> <a> Following </a> </li>
+            <li> <i class="bi bi-box"></i> <a asp-action="Profile" asp-controller="Explore" asp-route-userId = "@Model?.LoggedInUser.UserId"> Profile </a> </li>
+            <li> <i class="bi bi-credit-card"></i> <a>Subscriptions </a> </li>
+            <li> <i class="bi bi-gear"></i> <a>Settings </a> </li>
+            <li> <i class="bi bi-chat-dots"></i> <a> Help and support </a> </li>
+        </ul>
+    </div>
+
+    <div class="notification_bar">
+        here we will display notifications
+    </div>
+
+    <div class="logout_tab">
+        here we will display logout options
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+.env 
+
+appsettings.json
+
+appsettings.Development.json
+
+appsettings.*.json
+
+
+node_modules

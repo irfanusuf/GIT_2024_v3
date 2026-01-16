@@ -1,0 +1,243 @@
+﻿@model P2WebMVC.Models.ViewModels.CartView
+
+
+@{
+  ViewData["Title"] = "CheckOut";
+}
+
+
+<style>
+ 
+  .address_section,
+  .address_form,
+  .checkout_heading,
+  .order_summary,
+  .amount_container {
+    box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.103);
+    padding: 20px;
+    border-radius: 7px;
+  }
+</style>
+
+
+
+
+@if (Model?.Cart?.CartTotal == 0)
+{
+
+  <div>
+    <p class="text-danger"> Your Cart is empty </p>
+
+    <p> <a asp-controller="product" asp-action="index"> Explore our new Products </a></p>
+
+    <p> <a asp-controller="order" asp-action="recent"> view Recent orders</a> </p>
+
+
+  </div>
+
+}
+else
+{
+
+
+
+  <div class="checkout">
+    <div class="checkout_heading mb-5">
+      <span class="display-6 text-success"> <i class="bi bi-cart-check"></i> </span>
+      <span class="h4">CheckOut</span>
+      <span class="text-success ms-md-4"> * Kindly fill the address or update the existing one.</span>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-lg-7">
+
+      <form class="address_form mb-3" method="post" asp-controller="User" asp-action="CreateAddress"
+        asp-route-CartId="@Model?.Cart?.CartId">
+
+
+        <p class="h4 mb-3">
+          <i class="bi bi-geo-alt display-6 text-success"></i>
+          <span style="margin-left: 10px;">@(Model?.Address == null ? "Create Address" : "Update Address")</span>
+        </p>
+
+
+        <div class="row mb-3">
+
+          <div class="col-md-6">
+            <label class="form-label"> First Name</label>
+            <input type="text" class="form-control" name="FirstName" value="@Model?.Address?.FirstName"
+              placeholder="your First name">
+          </div>
+
+
+          <div class="col-md-6">
+            <label class="form-label"> Last Name</label>
+            <input type="text" class="form-control" name="LastName" value="@Model?.Address?.LastName">
+          </div>
+
+        </div>
+
+        <div class="row mb-3">
+
+          <div class=" col-4">
+            <label class="form-label"> Street</label>
+            <input type="text" class="form-control" name="Street" value="@Model?.Address?.Street">
+
+          </div>
+
+
+          <div class="col-4">
+            <label class="form-label"> City </label>
+            <input type="text" class="form-control" name="City" value="@Model?.Address?.City">
+
+          </div>
+
+
+          <div class="col-4">
+            <label class="form-label"> District </label>
+            <input type="text" class="form-control" name="District" value="@Model?.Address?.District">
+
+          </div>
+
+        </div>
+
+        <div class="row mb-3">
+
+
+          <div class="col-4">
+            <label class="form-label"> Pincode </label>
+            <input type="text" class="form-control" name="Pincode" value="@Model?.Address?.Pincode">
+
+          </div>
+
+          <div class="col-4">
+            <label class="form-label"> State </label>
+            <input type="text" class="form-control" name="State" value="@Model?.Address?.State">
+
+          </div>
+
+
+          <div class="col-4">
+            <label class="form-label"> Country </label>
+            <input type="text" class="form-control" name="Country" value="@Model?.Address?.Country">
+
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label"> Phone </label>
+            <input type="text" class="form-control" name="Phone" value="@Model?.Address?.Phone">
+
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label"> Landmark </label>
+            <input type="text" class="form-control" name="Landmark" value="@Model?.Address?.Landmark">
+
+          </div>
+
+
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">
+          <span>@(Model?.Address == null ? "Create Address" : "Update Address")</span>
+        </button>
+
+
+      </form>
+
+
+      <div class="amount_container mb-3">
+
+        <p class="h4 pb-3"> <i class="bi bi-wallet2 display-6 text-success"></i> <span style="margin-left: 10px;">Total
+            amount </span> </p>
+
+        <div class="row">
+
+          <div class=" col-6 display-5 ">
+            <p id="amount"> @Model?.Cart?.CartTotal </p> Rs.
+          </div>
+
+          <div class="col-6">
+            <a class="btn btn-outline-success " asp-controller="Order" asp-action="Create"
+              asp-route-CartId="@Model?.Cart?.CartId"> complete Order </a>
+
+    
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-lg-5 ">
+
+      <div class="address_section ">
+
+        <p class="h4 pb-3">
+          <i class="bi bi-truck display-6 text-success"></i> <span style="margin-left: 10px;"> Shipping Address </span>
+        </p>
+
+        @if (Model?.Address != null)
+        {
+
+          <p class="m-0 text-muted">@Model?.Address?.FirstName @Model?.Address?.LastName </p>
+          <p class="m-0 text-muted"> @Model?.Address?.Street , @Model?.Address?.City , @Model?.Address?.District ,
+            @Model?.Address?.Pincode </p>
+          <p class="m-0 text-muted">@Model?.Address?.State , @Model?.Address?.Country </p>
+        }
+      </div>
+
+      <div class="order_summary mt-4">
+
+
+        <p class="h4 mb-3"> <i class="bi bi-box-seam text-success display-6 "></i> <span style="margin-left: 10px;">
+            Order summary</span> </p>
+
+
+        @if (Model?.CartProducts != null)
+        {
+
+          @foreach (var product in Model.CartProducts)
+          {
+
+            <a asp-controller="product" asp-action="details" asp-route-ProductId="@product?.ProductId">
+              <div class="row mb-3 single_product">
+
+                <p class="col-6 m-0"> @product?.Product?.ProductName @product?.Color </p>
+                <p class="col-3 m-0"> <img src="@product?.Product?.ProductImage" width="100"> </p>
+                <p class="col-3 m-0"> @product?.Quantity x @product?.Product?.ProductPrice </p>
+
+              </div>
+
+            </a>
+          }
+
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+</div>
+
+
+
+
+
+
+
+
+
+   

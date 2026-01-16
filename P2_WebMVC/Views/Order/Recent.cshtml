@@ -1,0 +1,36 @@
+﻿@model P2WebMVC.Models.ViewModels.OrderView
+
+@{
+    ViewData["Title"] = "Recent Orders";
+}
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Recent Orders</h1>
+
+    @if (Model.Orders != null && Model.Orders.Any())
+    {
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var order in Model.Orders)
+            {
+                <div class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold text-indigo-600">Order #@order.OrderId</h2>
+                        <p class="text-lg text-gray-700 font-medium mt-1">₹@order.TotalPrice</p>
+                    </div>
+
+                    <div class="space-y-1 text-sm text-gray-600">
+                        <p><span class="font-medium text-gray-800">Order Status:</span> @order.OrderStatus</p>
+                        <p><span class="font-medium text-gray-800">Payment Status:</span> @order.PaymentStatus</p>
+                        <p><span class="font-medium text-gray-800">Payment Mode:</span> @order.PaymentMode</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center text-gray-500 text-lg mt-10">
+            No recent orders found.
+        </div>
+    }
+</div>

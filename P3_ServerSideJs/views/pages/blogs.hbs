@@ -1,0 +1,23 @@
+
+
+<div class="container mt-5">
+
+    <h1 class="text-center my-3" > Our Latest Blogs </h1>
+
+  <div class="row">
+    {{#each blogs}}
+    <div class="col-md-4 mb-4">
+
+      <div class="card h-100 shadow-sm">
+        <img src="{{this.blogPicture}}" class="card-img-top" alt="{{this.blogTitle}}" style="height: 300px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{this.blogTitle}}</h5>
+          <p class="card-text">{{this.shortDesc}}</p>
+          <a href="/blog/{{this._id}}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      
+    </div>
+    {{/each}}
+  </div>
+</div>

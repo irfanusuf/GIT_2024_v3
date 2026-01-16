@@ -1,0 +1,176 @@
+﻿
+@{
+ User? user = Context.Items[key: "user"] as User;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData[index: "Title"] - Trinkle Buddies</title>
+
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/P1WebMVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+@* 
+<header>
+  <!-- Navbar -->
+
+
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+    <div class="container-fluid">
+
+      <!-- Brand on the left -->
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+        <i class="bi bi-stars me-2"></i> Trinkle Buddies
+      </a>
+
+
+      <!-- Navbar toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSocialApp" aria-controls="navbarSocialApp" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <!-- Navbar links and account section -->
+      <div class="collapse navbar-collapse" id="navbarSocialApp">
+
+
+
+        <!-- Left side links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/Explore"><i class="bi bi-compass"></i> Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reels"><i class="bi bi-camera-reels"></i> Reels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/friends"><i class="bi bi-person"></i> Friends</a>
+          </li>
+        </ul>
+        <!-- Right side account section -->
+
+
+
+        @if(user != null){
+
+      
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="/messages" title="Messages">
+              <i class="bi bi-chat-dots fs-5"></i>
+            </a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" href="/notifications" title="Notifications">
+              <i class="bi bi-bell fs-5"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="@user?.ProfilePic" alt="Profile" class="rounded-circle" width="32" height="32" style="object-fit:cover;">
+
+
+              <span class="ms-2 fw-semibold"> 
+
+                 @user?.Username
+
+              </span>
+
+
+            </a>
+
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProfile">
+              <li><a class="dropdown-item " href="/user/Dashboard"><i class="bi bi-person"></i> My Profile</a></li>
+              <li><a class="dropdown-item" href="/settings"><i class="bi bi-gear"></i> Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/user/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+              <li><a class="dropdown-item" href="/account/logout"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+
+         }
+
+
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+</header> *@
+
+
+<div style="position: absolute; right : 0" >
+    @{
+        if (@TempData[key: "SuccessMessage"] != null)
+        {
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success</strong> @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+
+        if (@TempData[key: "ErrorMessage"] != null)
+        {
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong> @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+        {
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success</strong> @ViewBag.SuccessMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong> @ViewBag.ErrorMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    }
+</div>
+
+
+         @RenderBody()
+ 
+
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Trinkle Buddies - <a asp-area="" asp-controller="Home" asp-action="Privacy">See our user Agreement & Privacy policy</a>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync(name: "Scripts", required: false)
+</body>
+
+</html>

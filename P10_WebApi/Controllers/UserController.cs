@@ -66,7 +66,6 @@ namespace P10_WebApi.Controllers
         }
 
 
-
         [HttpPost("Login")]
         public async Task<ActionResult> Login(User req)
         {
@@ -117,7 +116,6 @@ namespace P10_WebApi.Controllers
                 return BadRequest(new { message = "Incorrect Password !" });
             }
         }
-
 
 
         [HttpPost("forgotpassword")]

@@ -1,0 +1,55 @@
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
+
+
+
+
+<h1 class="mt-5"> Blogs List </h1>
+
+<div class="table-responsive">
+
+
+
+
+<div class="p-5 mt-5">
+
+
+    <table class="table  table-hover ">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Title</th>
+                <th scope="col">Short desc</th>
+                <th scope="col">Category</th>
+                <th scope="col">Blog Picture</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            {{#each blogsARR}}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.blogTitle}}</td>
+                <td>{{this.shortDesc}}</td>
+                <td>{{this.category}}</td>
+                <td> <img src="{{this.blogPicture}}" alt="no image" width="200" class="img-thumbnail"> </td>
+                <td>
+                    <a class="btn btn-primary" href="/blog/edit/{{this._id}}" > Edit </a>
+                    <a class="btn btn-secondary" href="/blog/archive/{{this._id}}"> Archive </a>
+                </td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+
+</div>
+
+</div>

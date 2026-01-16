@@ -1,0 +1,204 @@
+﻿@model P1WebMVC.Models.ViewModels.ExploreViewModel
+
+@{
+    ViewData["Title"] = "Explore";
+}
+
+<style>
+
+.explore_main{
+
+display: flex;
+justify-content: space-around;
+
+}
+
+
+.explore_post{
+
+max-width:580px;
+background:#f2eef2;
+ border-radius:5px; 
+ overflow:hidden; 
+ box-shadow:0 3px 10px rgba(65, 62, 62, 0.188); 
+ margin-bottom:2.5rem; 
+ transition:all 0.3s ease;
+}
+
+
+.explore_video{
+
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    video{
+      width: 460px; 
+      aspect-ratio:9/16; 
+      object-fit:cover;"
+    }
+
+
+
+}
+
+</style>
+
+
+
+
+<div class="explore_main">
+
+
+
+<partial name="~/Views/Shared/SideNav.cshtml" />
+
+
+<div class="mt-5 mb-5" >
+
+
+    <h3 style="font-weight:700; text-align:center; color:#222; margin-bottom:2rem;">
+        <i class="bi bi-compass-fill me-2 text-primary"></i>Explore
+    </h3>
+
+    @foreach (var post in Model.Posts)
+    {
+        <div class="explore_post">
+            
+            <!-- Header -->
+            <div style="display:flex; align-items:center; gap:12px; padding:1rem; border-bottom:1px solid #eee;">
+                <img src="@post.User?.ProfilePic" alt="User" style="width:45px; height:45px; border-radius:50%; object-fit:cover;" />
+                <span style="font-weight:600;">@post.User?.Username</span>
+            </div>
+
+  
+            <!-- Media -->
+            @if (post.PostpicURL != null)
+            {
+                <img src="@post.PostpicURL" style="width:100%; aspect-ratio:4/3; object-fit:cover;" />
+            }
+            else
+            {
+            <div class="explore_video">
+                <video controls >
+                    <source src="@post.PostVideoURL" type="video/mp4" />
+                </video>
+            </div>
+             
+            }
+          
+            <!-- Footer -->
+            <div style="padding:1rem 1.25rem;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem;">
+                    @if (Model.LoggedInUser != null)
+                    {
+                        @if (post.Likes.Contains(Model.LoggedInUser))
+                        {
+                            <a href="/post/Removelike?postId=@post.PostId" title="Unlike">
+                                <i class="bi bi-heart-fill text-danger" style="font-size:26px; cursor:pointer; transition:transform 0.2s ease;"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/post/like?postId=@post.PostId" title="Like">
+                                <i class="bi bi-heart" style="font-size:26px; cursor:pointer; transition:transform 0.2s ease;"></i>
+                            </a>
+                        }
+                    }
+
+                    <div data-bs-toggle="modal" data-bs-target="#CommentsModal-@post.PostId" style="cursor:pointer; display:flex; align-items:center; gap:6px;">
+                        <i class="bi bi-chat-dots text-success" style="font-size:26px; cursor:pointer;"></i>
+                        <span style="color:#333; font-weight:500;">@post.Comments.Count</span>
+                    </div>
+                </div>
+
+                <div style="margin-top:8px;">
+                    <span data-bs-toggle="modal" data-bs-target="#LikesModal-@post.PostId" style="cursor:pointer; color:#333; font-weight:500;">
+                        @post.Likes.Count likes
+                    </span>
+                </div>
+
+                <p style="color:#444; margin-top:0.75rem; font-size:15px;">@post.PostCaption</p>
+            </div>
+        </div>
+
+        <!-- COMMENTS MODAL -->
+        <div class="modal fade" id="CommentsModal-@post.PostId" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content" style="border-radius:5px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-semibold">Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" style="display:flex; flex-direction:column; max-height:400px; overflow-y:auto;">
+                        @if (post.Comments.Any())
+                        {
+                            @foreach (var comment in post.Comments)
+                            {
+                                <div style="display:flex; align-items:center; gap:12px; padding:0.5rem 0; border-bottom:1px solid #f1f1f1;">
+                                    <img src="@comment?.User?.ProfilePic" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" />
+                                    <div>
+                                        <a asp-action="Profile" asp-controller="Explore" asp-route-userId="@comment?.UserId" style="font-weight:600; color:#000; text-decoration:none;">
+                                            @comment?.User?.Username
+                                        </a>
+                                        <p style="margin:0; color:#555;">@comment?.CommentText</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p style="color:#777; text-align:center; margin-top:1rem;">No comments yet.</p>
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        <form method="post" asp-controller="Post" asp-action="AddComment" asp-route-postId="@post.PostId" style="width:100%;">
+                            <div style="display:flex; gap:10px; padding-top:0.75rem;">
+                                <input class="form-control" name="CommentText" placeholder="Write a comment..." style="flex:1; border-radius:50px;" />
+                                <button type="submit" class="btn btn-secondary">Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIKES MODAL -->
+        <div class="modal fade" id="LikesModal-@post.PostId" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content" style="border-radius:5px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-semibold">Liked by</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" style="display:flex; flex-direction:column; max-height:400px; overflow-y:auto;">
+                        @if (post.Likes.Any())
+                        {
+                            @foreach (var like in post.Likes)
+                            {
+                                <div style="display:flex; align-items:center; gap:12px; padding:0.5rem 0; border-bottom:1px solid #f1f1f1;">
+                                    <img src="@like.ProfilePic" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" />
+                                    <span style="font-weight:600;">@like.Username</span>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p style="color:#777; text-align:center; margin-top:1rem;">No likes yet.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+<partial name="~/Views/Shared/RightSideNav.cshtml" />
+
+@* @await Html.PartialAsync(partialViewName: "~/Views/Shared/SideNav.cshtml") *@
+
+
+</div>
